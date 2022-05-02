@@ -1,5 +1,24 @@
 {
   "devDependencies": {
     "cypress": "^9.6.0"
-  }
+  },
+  "name": "cyStart",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {},
+  "scripts": {
+    "test": "cypress open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cashengineering/cyStart.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cashengineering/cyStart/issues"
+  },
+  "homepage": "https://github.com/cashengineering/cyStart#readme",
+  "description": ""
 }
