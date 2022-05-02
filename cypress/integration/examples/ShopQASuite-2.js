@@ -1,8 +1,8 @@
 // type definitions for Cypress object "cy"
 /// <reference types="cypress" />
-import HomePage from '../../support/PageObjects/HomePage';
+import CartPage from '../../support/PageObjects/CartPage';
 
-describe('Login and Cart Suite', function() {
+describe('Test Wishlist From Cart Suite', function() {
     
     //Collects Data from fixtures/example.json
     before(function(){
@@ -15,19 +15,19 @@ describe('Login and Cart Suite', function() {
     it('Cypress Test Case', function() {
     //Object Creation for PageObject Page Class and assigning it to a constant variable
 
-    const homePage = new HomePage();
+    const cartPage = new CartPage();
     
     //Calling
     cy.visit('https://shop.demoqa.com/my-account/');
-    homePage.getUserName().type(this.data.Username);
-    homePage.getEmail().type(this.data.Email);
-    homePage.getPassword().type(this.data.NewPassword);
-    homePage.getRegisterButton().click();
+    cartPage.getUserName().type(this.data.Username);
+    cartPage.getEmail().type(this.data.Email);
+    cartPage.getPassword().type(this.data.NewPassword);
+    cartPage.getRegisterButton().click();
 
     //Checking whether the Registration is successful and whether UserName is populated under login section
-    homePage.getLoginUserName().should('have.value',this.data.Username);
+    cartPage.getLoginUserName().should('have.value',this.data.Username);
 
-    //For Loop for Accessing productName array from Features File
+    //For Loop for Accessing productName array from Fixtures File
     this.data.productName.forEach(function(element){
         cy.selectProduct(element[0],element[1],element[2]);
     })

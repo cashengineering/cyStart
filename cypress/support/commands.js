@@ -27,7 +27,7 @@
 import ProductPage from '../support/PageObjects/ProductPage';
 
 Cypress.Commands.add("selectProduct", (productName, size, color) => {
-    //Instantiates ProductPage
+    //Instantiates A ProductPage
     const productPage = new ProductPage();
 
     //Searches Shirts
@@ -35,7 +35,7 @@ Cypress.Commands.add("selectProduct", (productName, size, color) => {
     productPage.getSearchTextBox().type('Shirt');
     productPage.getSearchTextBox().type('{enter}');
 
-    //Loops over Yielded Products, using productName to determine which one to click 
+    //Loops over Yielded Products, using productName to determine which one to click
     productPage.getProductsName().each(($el, index, $list) => {
         if($el.text().includes(productName)) {
             cy.get($el).click();
@@ -45,5 +45,8 @@ Cypress.Commands.add("selectProduct", (productName, size, color) => {
     productPage.getSelectColor().select(color);
     productPage.getSelectSize().select(size);
     productPage.getAddtoCartButton().click();
+})
 
+Cypress.Commands.add("favoriteCart", (productName, size, color) => {
+    
 })
