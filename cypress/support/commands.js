@@ -23,3 +23,27 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+import ProductPage from '../support/PageObjects/ProductPage';
+
+Cypress.Commands.add("selectProduct", (productName, size, color) => {
+    //Instantiates ProductPage
+    const productPage = new ProductPage();
+
+    //Searches Shirts
+    productPage.getSearchClick().click();
+    productPage.getSearchTextBox().type('Shirt');
+    productPage.getSearchTextBox().type('{enter}');
+
+    //Loops over Yielded Products, using productName to determine which one to click 
+    productPage.getProductsName().each(($el, index, $list) => {
+        if($el.text().includes(productName)) {
+            cy.get($el).click();
+        }
+    })
+
+    productPage.getSelectColor().select(color);
+    productPage.getSelectSize().select(size);
+    productPage.getAddtoCartButton().click();
+
+})

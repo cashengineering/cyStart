@@ -12,5 +12,5 @@ describe('My First Cypress Test', function() {
     //Verify number of items present under the Widget Tab
     cy.get(':nth-child(4) > .element-list > .menu-list > li').should('have.length',9);
 
-})
+    })
 })
