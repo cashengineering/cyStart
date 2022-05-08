@@ -1,5 +1,3 @@
-// type definitions for Cypress object "cy"
-/// <reference types="cypress" />
 import HomePage from '../../support/PageObjects/HomePage';
 
 describe('Login and Cart Suite', function() {

@@ -18,3 +18,6 @@ import './commands'
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
+
+// type definitions for Cypress object "cy"
+/// <reference types="cypress" />

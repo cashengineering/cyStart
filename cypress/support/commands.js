@@ -46,7 +46,3 @@ Cypress.Commands.add("selectProduct", (productName, size, color) => {
     productPage.getSelectSize().select(size);
     productPage.getAddtoCartButton().click();
 })
-
-Cypress.Commands.add("favoriteCart", (productName, size, color) => {
-    
-})
