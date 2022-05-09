@@ -1,21 +1,21 @@
 class ProductPage {
     getSearchClick() {
-        return cy.get('.noo-search');
+        return cy.get('div[class*="noo-navbar-header"] .noo-search').contains("Search");
     }
     getSearchTextBox() {
-        return cy.get('.form-control');
+        return cy.get('form[class*="noo-mebla-searchform"] input[type*="search"]');
     }
     getProductsName() {
-        return cy.get('.noo-product-inner h3');
+        return cy.get('div[class*="noo-product-inner"] h3');
     }
     getSelectSize() {
-        return cy.get('#pa_size');
+        return cy.get('td[class*="value"] select[id="pa_size"]'); 
     }
     getSelectColor() {
-        return cy.get('#pa_color');
+        return cy.get('td[class*="value"] select[id="pa_color"]');
     }
     getAddtoCartButton() {
-        return cy.get('.single_add_to_cart_button');
+        return cy.get('div[class*="add-to-cart"] button[class*="single_add_to_cart_button"]').contains("Add to cart");
     }
 }
 

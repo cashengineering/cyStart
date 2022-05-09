@@ -15,9 +15,17 @@
 
 // Import commands.js using ES2015 syntax:
 import './commands'
-
+//
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
 
 // type definitions for Cypress object "cy"
 /// <reference types="cypress" />
+
+//Collects Data from fixtures/example.json
+before(function(){
+    cy.fixture('example').then(function(data)
+    {
+        this.data=data ;
+    })
+})
